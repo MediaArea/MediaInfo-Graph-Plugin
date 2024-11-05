@@ -1,9 +1,15 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta charset='utf-8'>
-    <style type='text/css'>
-      svg { overflow: hidden }
+    <title>MediaInfo</title>
+    <style>
+      :root { color-scheme: var(--color-scheme, light); }
+      @media (prefers-color-scheme: dark) {
+        :root { --color-scheme: dark; }
+      }
+      svg > #graph0 > polygon { fill: transparent; }
+      svg { overflow: hidden; }
       .controls { position: fixed; top: 1em; right: 1em; opacity: 0.5; border-radius: 3px; background-color: lightblue; }
     </style>
   </head>
@@ -21,7 +27,7 @@
     <div id='svg'>
 @SVG@
     </div>
-    <script type='text/javascript'>
+    <script>
       function zoom(value) {
         var container = document.getElementById('svg');
         var svgs = container.getElementsByTagName('svg');
